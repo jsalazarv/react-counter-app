@@ -1,9 +1,9 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import "./index.css";
-import CounterApp from "./components/CounterApp";
+import "./main.css";
+import Main from "./Main";
 
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(<CounterApp value={0}/>);
+root.render(<Main/>);
