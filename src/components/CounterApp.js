@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons'
+import "./counter.css";
 
 const CounterApp = ({ value = 0 }) => {
     const [counter, setCounter] = useState(value);
@@ -8,12 +11,22 @@ const CounterApp = ({ value = 0 }) => {
     const handleReset = () => setCounter(value);
 
     return (
-        <div>
-            <h2>Counter App</h2>
-            <h3>{ counter }</h3>
-            <button onClick={handleSubtract}> - </button>
-            <button onClick={handleReset}> RESET </button>
-            <button onClick={handleAdd}> + </button>
+        <div className="wrapper">
+            <div className="counter-container">
+                <button className="counter-button" onClick={handleSubtract}>
+                    <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <div className="counter">
+                    { counter }
+                </div>
+                <button className="counter-button" onClick={handleAdd}>
+                    <FontAwesomeIcon icon={faPlus} />
+                </button>
+            </div>
+            <button className="reload-button"
+                    onClick={handleReset}>
+                <FontAwesomeIcon icon={faArrowRotateRight} />
+            </button>
         </div>
     );
 }
