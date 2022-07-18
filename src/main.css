@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'BeyondTheMountains';
+    src: local('BeyondTheMountains'), url(./assets/fonts/beyond_the_mountains/beyond_the_mountains.otf) format('woff');
+}
+
+.app-container {
+    background-color: #0F172B;
+    height: 100vh;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+}
+
+.footer {
+    @apply absolute;
+    @apply bottom-0;
+    @apply dark:text-sky-400;
+    @apply flex;
+    font-family: 'BeyondTheMountains', serif;
+    @apply items-center;
+    @apply justify-center;
+    @apply p-3;
+}
